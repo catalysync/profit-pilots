@@ -3,6 +3,7 @@ import type { Config } from "tailwindcss";
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./sections/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -16,6 +17,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "red-orange": {
+          500: 'color-mix(in srgb, theme(colors.red.500) 50%, theme(colors.orange.500) 50%)',
+        } 
       },
       fontFamily: {
         sans: ["var(--font-archivo)"],
