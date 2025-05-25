@@ -6,12 +6,12 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    name: "John McClane",
-    company: "Sonic Bloom Studios",
-    role: "Head of Operations",
+    name: "Robert Prehn",
+    company: "Toca Boca",
+    role: "Fractional CTO",
     quote:
-      "Profit Pilots didn't just build us a website; they engineered an e-commerce platform that handles high-traffic surges like a pro. Our conversions are through the roof!",
-    image: image1,
+      "Profit Pilots didn't just build us a website; they engineered an e-commerce platform. Our conversions are through the roof!",
+    image: image2,
     imagePositionY: 0.2,
   },
   {
@@ -20,7 +20,7 @@ const testimonials = [
     role: "Chief Marketing Officer",
     quote:
       "Our old online store was a dead end. Profit Pilots launched us into a new orbit, optimizing everything for sales. It's like they have a sixth sense for what customers want.",
-    image: image2,
+    image: image1,
     imagePositionY: 0.1,
   },
   {

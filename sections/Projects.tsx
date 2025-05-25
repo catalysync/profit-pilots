@@ -13,7 +13,7 @@ const projects = [
     image: image1,
   },
   {
-    name: "Sonic Bloom Studios",
+    name: "Toca Life Box",
     image: image2,
   },
   {
