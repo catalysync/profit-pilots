@@ -1,11 +1,31 @@
-import { FC } from "react";
+"use client"
+
+import { FC, useEffect } from "react";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 import heroImage from "@/assets/images/hero-image.png";
 import Image from "next/image";
 import Button from "@/components/Button";
+import SplitType from "split-type";
+import { stagger, useAnimate } from "framer-motion";
 
 const Hero: FC = () => {
-  return <section>
+  const [scope, animate] = useAnimate()
+
+  useEffect(() => {
+    new SplitType(scope.current.querySelector("h1"), {
+      types: ["lines", "words"],
+      tagName: "span"
+    });
+
+    animate(scope.current.querySelectorAll(".word"), {
+      transform: 'translateY(0%)'
+    }, {
+      duration: 0.5,
+      delay: stagger(0.2)
+    });
+  }, [animate, scope]);
+
+  return <section ref={scope}>
     <div className="grid md:grid-cols-12 md:h-screen items-stretch">
       <div className="md:col-span-7 flex flex-col justify-center">
         <div className="container !max-w-full">
