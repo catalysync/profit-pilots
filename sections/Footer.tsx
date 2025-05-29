@@ -30,7 +30,7 @@ const Footer: FC = () => {
       <div className="container">
         <div className="section">
           <div className="flex items-center gap-3">
-            <div className="size-3 rounded-full bg-green-400"></div>
+            <div className="size-3 rounded-full bg-green-400 animate-pulse"></div>
             <span>MISSION READY</span>
           </div>
           <div className="grid md:grid-cols-3 md:items-center">
