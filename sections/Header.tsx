@@ -3,7 +3,7 @@
 import Button from "@/components/Button";
 import { motion, useAnimate } from "framer-motion";
 import Link from "next/link";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, MouseEvent } from "react";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
@@ -116,17 +116,31 @@ const Header: FC = () => {
     }
   }, [bottomLineAnimate, bottomLineScope, isOpen, navAnimate, navScope, topLineAnimate, topLineScope]);
 
+  const onClickNavItem = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    setIsOpen(false);
+
+    const url = new URL(e.currentTarget.href);
+    const hash = url.hash;
+
+    const target = document.querySelector(hash);
+
+    if(!target) return;
+    target.scrollIntoView({ behavior: "smooth" })
+  }
+
   return <header>
     <div className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900 z-[10]" ref={navScope}>
       <nav className="mt-20 flex flex-col ">
         {navItems.map(({ label, href }) => (  
-          <Link onClick={() => { setIsOpen(false) }} href={href} key={label} className="relative group/project text-stone-200 border border-t last:border-b border-stone-800 py-8">
+          <Link onClick={onClickNavItem} href={href} key={label} className="relative group/nav-item text-stone-200 border border-t last:border-b border-stone-800 py-8">
             <div className="absolute bottom-0 left-0 w-full
-              h-0 group-hover/project:h-full transition-all duration-700 bg-stone-800">
+              h-0 group-hover/nav-item:h-full transition-all duration-700 bg-stone-800">
             </div>
             
             <div className="relative container !max-w-full flex items-center justify-between">
-              <span className="text-3xl">{label}</span>
+              <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-700">{label}</span>
               <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none" viewBox="0 0 24 24" strokeWidth="1.5"

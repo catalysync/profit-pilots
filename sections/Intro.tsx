@@ -29,7 +29,7 @@ const Intro: FC = () => {
   }, [animate, inView, scope]);
 
   return (
-    <section className="section mt-12 md:mt-16 lg:mt-20" ref={scope}>
+    <section className="section mt-12 md:mt-16 lg:mt-20" ref={scope} id="intro">
       <div className="container">
         <h2 className="text-4xl md:text-7xl lg-text-8xl lg-w[80%]">
           Building beautiful e-commerce stores with clean code
