@@ -76,7 +76,7 @@ const Testimonials: FC = () => {
           }
         </div>
 
-        <div className="flex gap-4 mt-6 lg:mt-10">
+        {/* <div className="flex gap-4 mt-6 lg:mt-10">
           <button 
           className="border 
           border-stone-400 size-11 
@@ -112,7 +112,7 @@ const Testimonials: FC = () => {
                 strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   )

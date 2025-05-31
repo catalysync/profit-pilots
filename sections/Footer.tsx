@@ -94,7 +94,7 @@ const Footer: FC = () => {
           
         </div>
         
-        <p className="py-16 text-white/30 text-sm">Copyright &copy; PROFIT+PILOTS &bull; All rights reserved</p>
+        <p className="py-16 text-white/30 text-sm">Copyright &copy; PROFIT+PILOTS, Protheolabs &bull; All rights reserved</p>
       </div>
     </footer>
   );
